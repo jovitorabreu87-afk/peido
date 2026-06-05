@@ -13,10 +13,13 @@ function mostrarJogo(jogo){
     .split("Español")[0]
     .split("Русский")[0]
     const div = document.getElementById("detalhes")
-    div.innerHTML = `
+    div.innerHTML = `           
             <img src="${jogo.background_image}">    
             <h1>${jogo.name}<h1>
             <p>🌟${jogo.rating}<p>
             <p>${descricao}<p>
     `
+}
+function voltar(){
+      window.history.back()
 }

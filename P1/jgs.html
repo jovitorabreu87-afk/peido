@@ -2,14 +2,34 @@
   <head>
     <meta charset="UTF-8" />
     <script src="RAWG.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="jgs.css" />
   </head>
   <body onload="procurarJogos()">
-    <div id="games"></div>
+    <header>
+      <img src="./Imagens/Logged 4-Photoroom.png" class="logo" />
+      <h1>Biblioteca Gamer</h1>
+      <div class="busca">
+        <input type="text" placeholder="Buscar jogos...." oninput="buscaInt()" id="pesquisa"/>
+        <button>🔍</button>
+      </div>
+    </header>
+    <h2>
+      Conheça novos jogos , leia nossas reviews para ajudar na hora de comprar
+      um novo jogo!!!
+    </h2>
+    <main class="conte">
+      <aside class="gen">
+        <button>Todos</button>
+        <button>RPG</button>
+        <button>Açao</button>
+        <button>Terror</button>
+      </aside>
+      <section id="games"></section>
+    </main>
     <div class="paginas">
-      <button id="ante" onclick="voltarP()">< </button>
+      <button onclick="voltarP()"><</button>
       <span id="pag">1</span>
-      <button id="prox" onclick="proximaP()"> ></button>
+      <button onclick="proximaP()">></button>
     </div>
   </body>
 </html>

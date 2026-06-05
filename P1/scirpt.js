@@ -5,7 +5,7 @@ function login(){
         const corretoS = "123"
         if(user === corretoN && pass === corretoS ){
               localStorage.setItem("loged","true")
-               window.location.href = "./P1/jgs.html"    
+               window.location.href = "jgs.html"    
             }else if(user.length == 0 || pass.length == 0){
                 document.getElementById("err").innerHTML = ("Preencha todas as areas de login!!")
             }else {
