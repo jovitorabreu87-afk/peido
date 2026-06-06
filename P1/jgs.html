@@ -9,7 +9,12 @@
       <img src="./Imagens/Logged 4-Photoroom.png" class="logo" />
       <h1>Biblioteca Gamer</h1>
       <div class="busca">
-        <input type="text" placeholder="Buscar jogos...." oninput="buscaInt()" id="pesquisa"/>
+        <input
+          type="text"
+          placeholder="Buscar jogos...."
+          oninput="buscaInt()"
+          id="pesquisa"
+        />
         <button>🔍</button>
       </div>
     </header>
@@ -19,10 +24,10 @@
     </h2>
     <main class="conte">
       <aside class="gen">
-        <button>Todos</button>
-        <button>RPG</button>
-        <button>Açao</button>
-        <button>Terror</button>
+        <button onclick="filtroGen('')">Todos</button>
+        <button onclick="filtroGen('role-playing-games-rpg')">RPG</button>
+        <button onclick="filtroGen('action')">Açao</button>
+        <button onclick="filtroGen('horror')">Terror</button>
       </aside>
       <section id="games"></section>
     </main>

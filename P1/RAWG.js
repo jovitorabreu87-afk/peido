@@ -1,5 +1,5 @@
 let pagina = Number(localStorage.getItem("pgAT")) || 1
-
+let genero = ""
 window.onload = function(){
 
     document.getElementById("pag").innerText = pagina
@@ -8,7 +8,14 @@ window.onload = function(){
 
 }
 function procurarJogos(){
+     let url =
+    `https://api.rawg.io/api/games?page=${pagina}&page_size=40&key=da6b29d1d1bb4707bc3f569800fc2273`
 
+    if(genero !== ""){
+
+        url += `&genres=${genero}`
+
+    }
     fetch(`https://api.rawg.io/api/games?page=${pagina}&page_size=40&key=da6b29d1d1bb4707bc3f569800fc2273`)
 
     .then(response => response.json())
@@ -20,6 +27,17 @@ function procurarJogos(){
         mostrarJogo(dados.results)
 
     })
+}
+function filtroGen(nomeGen){
+
+    genero = nomeGen
+
+    pagina = 1
+
+    document.getElementById("pag").innerText = pagina
+
+    procurarJogos()
+
 }
 function mostrarJogo(jogos){
 const div = document.getElementById("games")
