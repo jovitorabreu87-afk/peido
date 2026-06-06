@@ -4,6 +4,7 @@ function cadastrar() {
 
     localStorage.setItem("nome", usuario);
     localStorage.setItem("senha", senha);
+    localStorage.setItem("usuarioLogado", nome );
 
     alert("Cadastro realizado!");
     window.location.href = "login.html";

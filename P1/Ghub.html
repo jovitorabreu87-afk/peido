@@ -6,6 +6,23 @@
   <body onload="detalhesJG()">
     <button onclick="voltar()"><</button>
     <div id="detalhes"></div>
+    <div class="reviewBox">
+      <h2>Deixe sua avaliação</h2>
+
+      <textarea id="review" placeholder="O que você achou do jogo?"></textarea>
+
+      <select id="estrelas">
+        <option value="1">⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+      </select>
+
+      <button onclick="salvarReview()">Publicar Review</button>
+    </div>
+
+    <div id="listaReviews"></div>
     <script src="Ghub.js"></script>
   </body>
 </html>
