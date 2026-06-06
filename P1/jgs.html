@@ -6,7 +6,7 @@
   </head>
   <body onload="procurarJogos()">
     <header>
-      <img src="./Imagens/Logged 4-Photoroom.png" class="logo" />
+      <img src="./Imagens/Logged 4-Photoroom.png" onclick="" class="logo" />
       <h1>Biblioteca Gamer</h1>
       <div class="busca">
         <input
@@ -15,19 +15,22 @@
           oninput="buscaInt()"
           id="pesquisa"
         />
-        <button>🔍</button>
+        <span>🔍</span>
       </div>
     </header>
     <h2>
       Conheça novos jogos , leia nossas reviews para ajudar na hora de comprar
       um novo jogo!!!
     </h2>
+    <div id="loading">
+      <div class="barra"></div>
+    </div>
     <main class="conte">
       <aside class="gen">
         <button onclick="filtroGen('')">Todos</button>
         <button onclick="filtroGen('role-playing-games-rpg')">RPG</button>
         <button onclick="filtroGen('action')">Açao</button>
-        <button onclick="filtroGen('horror')">Terror</button>
+        <button onclick="filtroGen('adventure')">Aventura</button>
       </aside>
       <section id="games"></section>
     </main>

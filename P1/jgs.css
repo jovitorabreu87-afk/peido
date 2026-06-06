@@ -254,3 +254,30 @@ header{
 
     transform:scale(1.08);
 }
+.gen button:hover{
+    transform:scale(1.08);
+}#loading{
+    width:100%;
+    height:6px;
+    background:#444;
+    display:none;
+    overflow:hidden;
+}
+
+.barra{
+    width:30%;
+    height:100%;
+    background:#6c63ff;
+    animation:carregar 1s infinite linear;
+}
+
+@keyframes carregar{
+
+    from{
+        transform:translateX(-100%);
+    }
+
+    to{
+        transform:translateX(400%);
+    }
+}

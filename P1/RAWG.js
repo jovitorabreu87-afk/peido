@@ -16,7 +16,8 @@ function procurarJogos(){
         url += `&genres=${genero}`
 
     }
-    fetch(`https://api.rawg.io/api/games?page=${pagina}&page_size=40&key=da6b29d1d1bb4707bc3f569800fc2273`)
+    document.getElementById("loading").style.display = "block";
+    fetch(url)
 
     .then(response => response.json())
 
@@ -25,17 +26,13 @@ function procurarJogos(){
         console.log(dados)
 
         mostrarJogo(dados.results)
-
+        document.getElementById("loading").style.display = "none";
     })
 }
 function filtroGen(nomeGen){
-
     genero = nomeGen
-
     pagina = 1
-
     document.getElementById("pag").innerText = pagina
-
     procurarJogos()
 
 }
