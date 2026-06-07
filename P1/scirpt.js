@@ -4,7 +4,6 @@ function cadastrar() {
 
     localStorage.setItem("nome", usuario);
     localStorage.setItem("senha", senha);
-    localStorage.setItem("usuarioLogado", nome );
 
     alert("Cadastro realizado!");
     window.location.href = "login.html";
@@ -17,9 +16,17 @@ function login() {
     let usuarioSalvo = localStorage.getItem("nome");
     let senhaSalva = localStorage.getItem("senha");
 
-    if(usuario === usuarioSalvo && senha === senhaSalva){
+    if (usuario === usuarioSalvo && senha === senhaSalva) {
+
+        localStorage.setItem("usuarioLogado", usuario);
+
+        alert("Login realizado com sucesso!");
+
         window.location.href = "jgs.html";
-    }else{
+
+    } else {
+
         alert("Usuário ou senha incorretos");
+
     }
 }

@@ -6,6 +6,7 @@ function detalhesJG(){
     .then(dados => {
             console.log(dados)
             mostrarJogo(dados)
+            carregarReviews();
     })
 }
 function mostrarJogo(jogo){
@@ -20,6 +21,7 @@ function mostrarJogo(jogo){
             <p>${descricao}<p>
     `
 }
+
 function voltar(){
       window.history.back()
 }
@@ -59,7 +61,7 @@ function carregarReviews(){
     reviewsJogo.forEach(review => {
         lista.innerHTML += `
             <div class="review">
-                <h3>${review.nome}</h3>
+                <h3>${review.usuario}</h3>
                 <p>${"⭐".repeat(review.estrelas)}</p>
                 <p>${review.texto}</p>
             </div>
