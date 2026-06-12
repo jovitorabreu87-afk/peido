@@ -58,13 +58,33 @@ function carregarReviews(){
 
     let reviewsJogo = reviews.filter(review => review.jogo == idJogo);
 
-    reviewsJogo.forEach(review => {
+    reviewsJogo.forEach((review ,index) => {
         lista.innerHTML += `
             <div class="review">
                 <h3>${review.usuario}</h3>
                 <p>${"⭐".repeat(review.estrelas)}</p>
                 <p>${review.texto}</p>
+                <button onclick="apagar(${index})">Excluir Review</button>
             </div>
         `;
     });
+}
+function apagar(indice){
+    let reviews = JSON.parse(localStorage.getItem("reviews")) || []
+    const idJogo  = new 
+    URLSearchParams(window.location.search).get("id")
+    let reviewsJogo = reviews.filter(review => 
+            review.jogo == idJogo);        
+        let  reviewApa = reviewsJogo[indice]
+        reviews = reviews.filter(review => !(review.jogo == reviewApa.jogo
+            && 
+            review.usuario == reviewApa.usuario &&
+                review.texto == reviewApa.texto)
+        );
+        localStorage.setItem("reviews" , JSON.stringify(reviews));
+        carregarReviews()
+    
+
+
+
 }

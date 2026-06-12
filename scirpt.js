@@ -8,6 +8,17 @@ function cadastrar() {
     alert("Cadastro realizado!");
     window.location.href = "login.html";
 }
+function hideP(){
+    let caixa = document.getElementById("senha")
+    if(caixa.type === "password"){
+        caixa.type = "text"
+    }else{
+        caixa.type = "password"
+    }
+
+
+}
+
 
 function login() {
     let usuario = document.getElementById("nome").value;
